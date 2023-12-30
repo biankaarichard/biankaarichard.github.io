@@ -243,20 +243,16 @@
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // po sobáši
-      // days = -days
-      // days = days -1
       
       var countdownElement = document.getElementById("countdown");
-      countdownElement.innerHTML = -days + "d " + -hours + "h " + minutes + "m " + seconds + "s";
+      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
       // countdownElement.innerHTML = "Sme svoji už " + days + " dní!";
 
-      // if (distance < 0) {
-      //   clearInterval(x);
-      //   countdown.innerHTML = "Už sa to začalo!";
-      //   preCountdownText.innerHTML = "";
-      // }
+      if (distance < 0) {
+        clearInterval(x);
+        countdown.innerHTML = "Už sa to začalo!";
+        preCountdownText.innerHTML = "";
+      }
     }, 1000);
 
     // Google Map
