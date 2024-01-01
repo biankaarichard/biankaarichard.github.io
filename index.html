@@ -250,12 +250,12 @@
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
       
       var countdownElement = document.getElementById("countdown");
-      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      countdownElement.innerHTML = days + "d " + hours + 1 + "h " + minutes + "m " + seconds + "s";
       // countdownElement.innerHTML = "Sme svoji už " + days + " dní!";
 
       if (distance < 0) {
         clearInterval(x);
-        countdown.innerHTML = "Už sa to začalo!";
+        countdown.innerHTML = "Už sme svoji!";
         preCountdownText.innerHTML = "";
       }
     }, 1000);
